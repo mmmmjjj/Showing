@@ -1,54 +1,65 @@
-## 🗨️ 프로젝트 소개
+# Showing
+🎞 사용자 맞춤 공연 추천 서비스
 
-뮤지컬/연극 소비자의 더 나은 경험과 선택을 위하여 <br>공연의 세부 정보를 통한 뮤지컬/연극 추천 데이터 및 리뷰 분석을 통한 키워드 워드클라우드를 제공합니다.<br>각 공연 당 별점 평가와 리뷰 작성이 가능하며, 다른 사람들의 리뷰 또한 확인 가능합니다.
+> 티켓값도 비싼데 뭘 봐야 하지? 쇼잉과 함께라면 걱정 마세요.
+> <br>
+> <br>
+> Showing은 공연 정보를 제공하고 리뷰를 남겨 공연을 추천받는 웹서비스입니다.
+> <br>
+> 직접 본 공연을 리뷰하고 평가 할 수 있으며 평가 데이터를 기반으로 사용자가 선호할 만한 공연을 추천해드립니다.
+> <br>
+> 나에게 딱 맞는 뮤지컬, 연극을 추천받으세요!
+
+<br />
+
+![](https://github.com/mmmmjjj/Showing/blob/master/exec/main.gif)
 
 
-<br>
+## 개발 기간
 
-## 🗓️ 진행 기간
+### 2022.02.21 ~ 2022.04.08 (7주)
 
-2022.02.21~2022.04.08(총 7주)
+<br />
 
-<br>
+## 팀원 소개
 
-## 🖊️ 팀원 소개
+- Backend : 김민준, 김혜지, 이명주
 
-Backend : 김민준, 김혜지, 이명주
+- Frontend : 고주희, 송예진, 최혜린
 
-Frontend : 고주희, 송예진, 최혜린
+- Data : 고주희, 김민준, 송예진, 이명주
 
-Data : 고주희, 김민준, 송예진, 이명주
+- Hadoop : 김혜지, 최혜린
 
-Hadoop : 김혜지, 최혜린
+<br />
 
-<br>
+## 기술 스택
 
-## 🔨 기술스택
+### 💻 Front-end
 
-### Front-End
+- Node.js
+- HTML5, CSS3, JS(ES6)
+- Vue.js, Vuex
+- Visual Studio Code
 
-- Node.js - `v14.15.1`
-- npm - `v8.1.2`
-- HTML 5, CSS3, JavaScript (ES6)
-- Vue.js 2
-
-## Back-End
+### 💻 Back-end
 
 - Java - `openjdk v1.8.0_192`
 - Spring Boot - `v2.5.7`
 - Django
-- JPA, QueryDSL
 - MySQL - `v8.0.27`
+- JPA, QueryDSL
+- JWT(Json Web Token)
 - Swagger - `v3`
 
-## Data
+### 💻 Data
 
 - Hadoop HDFS
 - Hadoop mapreduce
 - Python
 - Selenium
 
-## Infra
+### 💻 Infra
 
 - AWS EC2 Ubuntu 20.04
 - Jenkins - [ jenkins/jenkins:lts ] - `v2.332.1`
@@ -56,46 +67,72 @@ Hadoop : 김혜지, 최혜린
 - Certbot - `certbot 1.25.0`
 - Docker - `v20.10.13`
 
-<br>
+<br />
 
-## 🔨 파일구조
+## 주요 기능
 
-[프로젝트 구조](https://broadleaf-crabapple-56b.notion.site/dfae4f46a3ee40eba813d49425fa9f8e)
+<img width="984" alt="image" src="https://user-images.githubusercontent.com/67090601/200235486-998d25ba-0f01-49e3-9883-c1321024a788.png">
 
-<br>
+### [🖥 상세 화면](./exec/시연시나리오.pdf)
 
-## ✨ 산출물
+## 실행 방법
 
-### 화면 설계
+1. **원격 저장소 복제**
 
-[![Group_24](https://lab.ssafy.com/s06-bigdata-dist-sub2/S06P22A301/uploads/bfc9f2ff63a8158f442c538706df0880/Group_24.png)](https://lab.ssafy.com/s06-bigdata-dist-sub2/S06P22A301/uploads/bfc9f2ff63a8158f442c538706df0880/Group_24.png)
-
-### ERD
-
-[![ourerd_ver2__2_](https://lab.ssafy.com/s06-bigdata-dist-sub2/S06P22A301/uploads/4617c4334bc7ae88689d184c1837ef94/ourerd_ver2__2_.png)](https://lab.ssafy.com/s06-bigdata-dist-sub2/S06P22A301/uploads/4617c4334bc7ae88689d184c1837ef94/ourerd_ver2__2_.png)
-
-### API
-
-[API 설계서](https://broadleaf-crabapple-56b.notion.site/API-9a5a758b6b074989ab66d53ca90184f6)
-
-<br>
-
-
-## 🏗️ 빌드 방법
-
-원격의 git 저장소를 로컬에 복제
-
-```shell
-git clone
+```bash
+$ git clone https://github.com/mmmmjjj/Showing.git
 ```
 
-npm을 이용하여 필요한 패키지 설치
+### 프론트엔드 실행
 
-```shell
-npm install
+2. **프로젝트 폴더로 이동**
+
+```bash
+$ cd frontend
 ```
 
-웹팩 개발 서버 구동
-```shell
-npm run serve
+3. **필요한 node_modules 설치**
+
+```bash
+$ npm install
 ```
+
+4. **개발 서버 실행**
+
+```bash
+$ npm run serve
+```
+
+### server 실행
+
+5. **프로젝트 폴더로 이동**
+
+```bash
+$ cd backend
+$ ./gradlew clean build
+```
+
+6. **DB 덤프파일로 로컬 MySQL에 DB 생성**
+
+7. **jar 파일로 프로젝트 실행**
+
+```bash
+$ java -jar build/libs/backend-0.0.1-SNAPSHOT.jar
+```
+
+## 프로젝트 산출물
+
+- ERD
+![image](https://user-images.githubusercontent.com/67090601/200231702-bcb08037-4377-46a7-ad7f-19bf9af88b99.png)
+
+- 화면 설계서
+![163381405-6d09eb98-8234-4398-bd16-30a2dff067cf](https://user-images.githubusercontent.com/67090601/200232296-0df28a68-d85b-41b7-b926-98c94065b5fc.png)
+
+
+- Notion
+<img width="1032" alt="image" src="https://user-images.githubusercontent.com/67090601/200230767-6daf35d4-fac9-4d7a-90cb-36cc12e5a78b.png">
+
+
+- [API 설계서](https://broadleaf-crabapple-56b.notion.site/API-9a5a758b6b074989ab66d53ca90184f6)
+- [포팅매뉴얼](./exec/포팅_메뉴얼.pdf)
+- [시연시나리오](./exec/시연시나리오.pdf)
